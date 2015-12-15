@@ -376,8 +376,49 @@ footer {
 /* AGENDA */
 
 .agenda .row {
-  margin: 0.5em 0;
+  margin: 1em 0;
+  padding: 1em;
 }
+
+.agenda-day:not(:last-child) {
+  margin-bottom: 4em;
+}
+
+.agenda .break {
+  opacity: 0.8;
+  background-color: rgba(245,245,245, 1);
+}
+
+.agenda .day-header {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #333;
+}
+
+.agenda .row:nth-child(even) {
+  background-color: rgba(245,245,245, 0.8);
+}
+
+.row .time {
+  display: inline-block;
+  width: 20%;
+  vertical-align: middle;
+}
+
+.row .agenda-details {
+  display: inline-block;
+  width: 75%;
+  vertical-align: middle;
+}
+
+.agenda-details .talk-topic {
+  font-size: 1.1em;
+  margin-bottom: 0.2em;
+  font-weight: 700;
+}
+
+
+
+
 
 
 

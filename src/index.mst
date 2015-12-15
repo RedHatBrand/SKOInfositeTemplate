@@ -164,63 +164,78 @@
       <h1>AGENDA</h1>
         <div class="agenda-day">
           <div class="day-header">
-            <h2>Monday</h2>
-            <h5>3 March</h5>
+            <h2>Monday | 3 March</h2>
           </div>
 
           <div class="row">
             <div class="time">9:00 - 10:00</div>
-            <div class="talk-topic">The Wonders of the World</div>
-            <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            <div class="agenda-details">
+              <div class="talk-topic">The Wonders of the World</div>
+              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            </div>
           </div>
           <div class="row">
-            <div class="time">10:00 - 11:00</div>
-            <div class="talk-topic">The Wonders of the World</div>
-            <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            <div class="time">9:00 - 10:00</div>
+            <div class="agenda-details">
+              <div class="talk-topic">The Wonders of the World</div>
+              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            </div>
           </div>
           <div class="row">
-            <div class="time">11:00 - 12:00</div>
-            <div class="talk-topic">The Wonders of the World</div>
-            <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            <div class="time">9:00 - 10:00</div>
+            <div class="agenda-details">
+              <div class="talk-topic">The Wonders of the World</div>
+              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            </div>
           </div>
           <div class="row">
-            <div class="time">12:00 - 1:00</div>
-            <div class="talk-topic">The Wonders of the World</div>
-            <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            <div class="time">9:00 - 10:00</div>
+            <div class="agenda-details">
+              <div class="talk-topic">The Wonders of the World</div>
+              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            </div>
           </div>
         </div>
 
         <div class="agenda-day">
           <div class="day-header">
-            <h2>Tuesday</h2>
-            <h5>4 March</h5>
+            <h2>Tuesday | 4 March</h2>
           </div>
           
           <div class="row break">
             <div class="time">8:00 - 9:00</div>
-            <div class="talk-topic">Registration</div>
+            <div class="agenda-details">
+              <div class="talk-topic">Registration</div>
+            </div>
           </div>
           <div class="row">
             <div class="time">9:00 - 10:00</div>
-            <div class="talk-topic">The Wonders of the World</div>
-            <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            <div class="agenda-details">
+              <div class="talk-topic">The Wonders of the World</div>
+              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            </div>
           </div>
           <div class="row">
-            <div class="time">10:00 - 11:00</div>
-            <div class="talk-topic">The Wonders of the World</div>
-            <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            <div class="time">9:00 - 10:00</div>
+            <div class="agenda-details">
+              <div class="talk-topic">The Wonders of the World</div>
+              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            </div>
           </div>
           <div class="row">
-            <div class="time">11:00 - 12:00</div>
-            <div class="talk-topic">The Wonders of the World</div>
-            <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            <div class="time">9:00 - 10:00</div>
+            <div class="agenda-details">
+              <div class="talk-topic">The Wonders of the World</div>
+              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            </div>
           </div>
           <div class="row">
-            <div class="time">12:00 - 1:00</div>
-            <div class="talk-topic">The Wonders of the World</div>
-            <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            <div class="time">9:00 - 10:00</div>
+            <div class="agenda-details">
+              <div class="talk-topic">The Wonders of the World</div>
+              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
+            </div>
           </div>
-        </div>
     </div>
 
   </section><!--agenda-->
