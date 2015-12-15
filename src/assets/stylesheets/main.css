@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600);
+@import url('https://red-hat-overpass-fonts.s3.amazonaws.com/overpass.css');
+@import url('http://red-hat-overpass-fonts.s3.amazonaws.com/overpass.css');
 
 @custom-media --taller-and-thinner   (max-aspect-ratio: 4 / 10);
 
@@ -18,124 +20,365 @@
 
 html {
   -webkit-font-smoothing: antialiased;
-  font-family: 'Avenir', 'Helvetica', sans-serif;
-  overflow: hidden !important;
+  font-family: 'Overpass', 'Helvetica', sans-serif;
 }
 
 body {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
+  vh: 100;
+  vw: 100;
   margin: 0;
-  color: #484747;
-  background-color: var(--backgroundColor);
-
-  &.reversed {
-    background-color: var(--textColor);
-  }
 }
 
-.background-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+h1 {
+  font-weight: 400;
+  font-size: 2em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.8em;
+}
+
+section.header {
+  content:""; 
+  z-index:0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-color: #e0e5e7;
+  background-image: url(https://s3.amazonaws.com/media-p.slid.es/uploads/team-32/images/1748981/drawing3.svg);
+  background-repeat: norepeat;
   background-size: cover;
-  background-position: center;
+  background-position: 50% 50%;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.reversed {
-  .content {
-    color: var(--backgroundColor);
-  }
-
-  .call-to-action {
-    color: var(--textColor);
-    background-color: var(--backgroundColor);
-  }
+section {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  width: 100%;
+  position:relative;
 }
 
-.content {
-  height: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-  color: var(--textColor);
+section:nth-child(2) {
+  background-color: #e0e5e7 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: var(--lineHeight);
-  margin: 0;
+section:nth-child(even):after {
+  background-image:url(http://redhatbrand.github.io/RedHatPatterns/positioned-patterns/corporate/grey-light/positioned-08-04-100.svg);
+  background-repeat: norepeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width:100%;
+  height:100%;
+  content: " ";
+  position:absolute;
+  top:0;
+  z-index: -100;
+  opacity: 0.3;
 }
 
-.headline + .subheading {}
-
-.call-to-action {
-  margin-top: 1em;
-  font-size: 0.8em;
-  color: var(--backgroundColor);
-  background-color: var(--textColor);
-  text-decoration: none;
-  padding: 0.7em 1em;
-  display: inline-block;
-  font-weight: 800;
+section:nth-child(odd) {
+  background-color: whitesmoke;
 }
 
-.reversed .logo {
-  * {
-    fill: var(--backgroundColor);
-  }
+.container {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
 }
 
-.logo {
-  width: 7em;
+.center-content {
+  width: 24em;
+  margin: 0 auto;
+  display: block;
   position: absolute;
-  bottom: 0.65em;
-  right: 0.65em;
-  top: auto;
-  left: auto;
-
-  * {
-    fill: var(--textColor);
-  }
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@media (--tall-and-thin) {
-  html {
-    font-size: 9vw !important;
-  }
+.date {
+  margin-top: 1.5em;
+  border-top: 2px solid #333;
 }
 
-@media (--taller-and-thinner) {}
+.date h3{
+  color: #333;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  text-align: right;
+}
 
-@media (--wider-than-a-square) {}
+.nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index:100;
+}
 
-@media (--wide-and-short) {}
+.nav.stickytop {
+  position:fixed;
+  top:0;
+  height: 3.1em;
+}
 
-@media (--wider-and-shorter) {
-  html {
-    font-size: 9vh !important;
-  }
+.nav ul {
+  margin: 0 auto;
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
 
-  .logo, .content {
+.nav li {
+  display: inline-block;
+  font-size: 1em;
+  text-align: center;
+  padding: 1em 1em 2em 1em;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.9em 0;
+}
+
+.nav li a:hover {
+  border-bottom: 3px solid #08a8e5;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.stickytop {
+  background-color: white;
+  border-bottom: 1px solid #efefef;
+  height: 4em;
+}
+
+.headroom {
+  transition: transform 200ms linear;
+}
+ 
+.headroom--pinned {
+  transform: translateY(0%);
+}
+
+.headroom--unpinned {
+  transform: translateY(-200%);
+}
+
+text {
+  fill: #333;
+}
+
+.text-image {
+  color: white;
+}
+
+.red-hat-logo{
+  position:absolute;
+  right: 0;
+  width: 8em;
+  margin: 2em;
+}
+
+.speakers-container {
+  text-align: center;
+}
+
+.speakers-list {
+  display: inline-block;
+  margin: .5em;
+  position:relative;
+  background-color: red;
+  border-radius: 0.3em;
+}
+
+.speakers-list:hover a {
+  color: red;
+}
+
+.speakers-list:hover .speaker-img {
+  opacity: 0.5;
+}
+
+.speakers-list a {
+  text-decoration: none !important;
+  color: white;
+  font-size: 1em;
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  display:block;
+  background-color: rgba(51, 51, 51, 0.8);
+  padding: 0.5em 0em 0.3em 0;
+  border-radius: 0 0 0.3em 0.3em;
+}
+
+.speaker-img {
+  border-radius: 0.3em;
+  width: 10em;
+  height: 13em;
+  background-size: cover;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-position-x: 50%;
+}
+
+.sponsors-container {
+  text-align: center;
+}
+
+.red-hat-logo-sponsors {
+  display: inline-block;
+  width: 8em;
+  margin: 0 3em;
+}
+
+footer {
+  background-color: #111;
+  padding: 3em;
+}
+
+.copy {
+  color: white;
+  font-size: 0.8em;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    bottom: auto;
-    height: auto;
-  }
-
-  .content {
-    padding: 3rem;
-  }
-
-  .logo {
-    padding: 1.5rem;
-    width: 12em;
-  }
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+
+.show {
+  display: block !important;
+}
+
+@media (max-width: 600px) {
+  .container { width: 90% !important; }
+}
+
+/*HAMBURGLER NAV STYLES*/
+
+*{   -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+.top-animate {
+    background: #fff !important;
+    top: 13px !important;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.mid-animate {
+    opacity: 0;
+}
+.bottom-animate {
+    background: #fff !important;
+    top: 13px !important;
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+}
+.top-menu {
+    top: 5px;
+    width: 25px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #F9A530;
+}
+.mid-menu {
+    top: 13px;
+    width: 25px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #F9A530;
+}
+.bottom-menu {
+    top: 21px;
+    width: 25px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #F9A530;
+}
+.menui {
+    background: #fff;
+    transition: 0.6s ease;
+    transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
+    margin-top: 10px;
+    position: absolute;
+}
+
+
+.icon {
+    z-index: 999;
+    position: fixed;
+    display: none;
+    padding: 9px;
+    height: 32px;
+    width:32px;
+    margin: 0px;
+    top: 0;
+    left: 0;
+}
+
+.mobilenav {
+    font-family: inherit;
+    top: 0;
+    left:0;
+    z-index: 998;
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(0%) !important;
+}
+.mobilenav li {
+    list-style-type: none;
+    text-align: center;
+    padding: 10px;
+    display: block;
+}
+.mobilenav li a {
+    font-size: 150%;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    width: 100%;
+}
+.mobilenav li:first-child {
+    margin-top: 60px;
+}
+
+.mobilenav li a:hover {
+  padding-bottom: 0.5em;
+}
+
+/* AGENDA */
+
+.agenda .row {
+  margin: 0.5em 0;
+}
+
+
+
+
