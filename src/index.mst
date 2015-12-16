@@ -70,9 +70,9 @@
       <div class="date">
         <h3>{{sko-date}}</h3>
       </div>
-
-      <a class="cta">{{call-to-action}}</a>
-
+      {{#call-to-action}}
+        <a class="cta">{{call-to-action}}</a>
+      {{/call-to-action}}
     </div>
   </section><!--header-->
   {{#collection.sko-body-sections}}
@@ -80,7 +80,7 @@
   <section class="about" id="about">
     
     <div class="container">
-      <h1>JUST TEXT</h1>
+      <h1>{{title}}}</h1>
       {{{body-copy}}}  
     </div>
 
@@ -91,8 +91,7 @@
   <section class="text-image" id="text-image" style="background-image:url({{{text-image}}}); background-size:cover; background-color: #333; -webkit-filter: brightness(1); filter: brightness(3); background-blend-mode: multiply; -webkit-filter: grayscale(1);">
     
     <div class="container">
-      <h1>CONTENT WITH AN IMAGE</h1>
-      
+      <h1>{{title}}}</h1>
       {{{body-copy}}}  
     </div>
 
@@ -103,7 +102,7 @@
   <section class="video" id="video">
     
     <div class="container">
-      <h1>VIDEO SECTION</h1>
+      <h1>{{title}}</h1>
       <div class="video-container">
         <iframe width="420" height="315" src="{{{video}}}}" frameborder="0" allowfullscreen></iframe>
       </div>
@@ -116,7 +115,7 @@
   <section class="speakers" id="speakers">
     
     <div class="container">
-      <h1>SPEAKERS</h1>
+      <h1>{{title}}}</h1>
         <div class="speakers-container">
 
           <div class="speakers-list" data-remodal-target="modal">
@@ -165,21 +164,15 @@
   <section class="sponsors" id="sponsors">
     
     <div class="container">
-      <h1>SPONSORS</h1>
-        <h3>Gold Sponsors</h3>
-        <div class="sponsors-container">
-          <img class="red-hat-logo-sponsors" src="{{{gold-logo-sponsor}}}" />
-        </div>
-
-        <h3>Silver Sponsors</h3>
-        <div class="sponsors-container">
-          <img class="red-hat-logo-sponsors" src="{{{silver-logo-sponsor}}}" />
-        </div>
-
-        <h3>Bronze Sponsors</h3>
-        <div class="sponsors-container">
-          <img class="red-hat-logo-sponsors" src="{{{bronze-logo-sponsor}}}" />
-        </div>
+      <h1>{{title}}}</h1>
+        {{#collection.logo-tiers}}
+          <h3>{{logo-tier-title}}</h3>
+          <div class="sponsors-container">
+            {{#collection.sponsor-logos}}
+              <img class="red-hat-logo-sponsors" src="{{{gold-logo-sponsor}}}" />
+            {{/collection.sponsor-logos}}
+          </div>
+        {/collection.logo-tiers}}
     </div>
   </section><!--sponsors-->
   {{/block.sponsors}}
