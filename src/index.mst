@@ -17,7 +17,6 @@
   </head>
   <body class="{{theme}}">
   <div class="remodal-bg">
-    <img class="red-hat-logo" src="https://s3.amazonaws.com/media-p.slid.es/uploads/team-32/images/1552030/redhat-logo.svg" />
     
     <a href="javascript:void(0)" class="icon">
       <div class="hamburger">
@@ -27,20 +26,20 @@
       </div>
     </a>
 
-    <header class="nav">
-      <ul>
-        <li class="js-nav-links"><a href="#about">Just Text</a></li>
-        <li class="js-nav-links"><a href="#text-image">Content With an Image</a></li>
-        <li class="js-nav-links"><a href="#video">Video Section</a></li>
-        <li class="js-nav-links"><a href="#speakers">Speakers</a></li>
-        <li class="js-nav-links"><a href="#agenda">Agenda</a></li>
-        <li class="js-nav-links"><a href="#sponsors">Sponsors</a></li>
-      </ul>
-    </header>
+    <nav class="nav">
+      <div class="container">
+        <ul>
+          <li class="logo js-nav-links"><a href="http://redhat.com"> <img class="red-hat-logo" src="https://s3.amazonaws.com/media-p.slid.es/uploads/team-32/images/1552030/redhat-logo.svg" /></a></li>
+          <li class="js-nav-links"><a href="#agenda">Agenda</a></li>
+          <li class="js-nav-links"><a href="#speakers">Speakers</a></li>
+          <li class="js-nav-links"><a href="#sponsors">Sponsors</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <section class="header">
 
-      <div class="center-content">
+      <div class="container hero">
         <svg class="sko-logo event-logo" viewBox="0 0 400 128" xmlns="http://www.w3.org/2000/svg">
           <path style="fill:#08a8e5;" d="m 106.26,6.5 -101.26,0 0,101.5 101.26,0.16 z"></path>
           <path style="fill:#0782c2;" d="m 106.26,6.5 0,101.5 -36.3,0 -15,15 -15,-15 -35,0 L 106.26,6.5 Z"></path>
@@ -71,7 +70,7 @@
           <h3>{{sko-date}}</h3>
         </div>
         {{#call-to-action}}
-          <a class="cta">{{call-to-action}}</a>
+          <a href="{{call-to-action-url}}" class="cta">{{call-to-action}}</a>
         {{/call-to-action}}
       </div>
     </section><!--header-->
