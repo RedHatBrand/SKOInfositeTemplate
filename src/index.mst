@@ -112,15 +112,15 @@
               <h2>{{agenda-day-title}}</h2>
             </div>
 
-            {{#spreadsheet.agenda-sessions}}
-            <div class="row {{session-type}}">
+            {{#spreadsheet.agenda-times}}
+            <div class="row {{time-type}}">
               <div class="time">{{start-time}} - {{end-time}}</div>
               <div class="agenda-details">
                 <div class="talk-topic">{{session-title}}</div>
                 <div class="speaker">{{speaker-name}}</div>
               </div>
             </div>
-            {{/spreadsheet.agenda-sessions}}
+            {{/spreadsheet.agenda-times}}
 
           </div>
         {{/collection.agenda-day}}
@@ -132,13 +132,19 @@
     <section class="sponsors" id="sponsors">
       
       <div class="container">
-        <h1>{{title}}</h1>
+          <h1>{{title}}</h1>
           {{#collection.logo-tiers}}
-            <h3>{{logo-tier-title}}</h3>
+            <h3>{{tier-title}}</h3>
             <div class="sponsors-container">
-              {{#collection.sponsor-logos}}
-                <img class="red-hat-logo-sponsors" src="{{{logo-img}}}" />
-              {{/collection.sponsor-logos}}
+              {{#collection.logos}}
+              
+              {{#logo-img}}
+                <div>
+                  <img class="red-hat-logo-sponsors" src="{{{logo-img}}}" />
+                </div>
+              {{/logo-img}}
+              
+              {{/collection.logos}}
             </div>
           {{/collection.logo-tiers}}
       </div>
