@@ -11,7 +11,7 @@
       var vminsize = 2
       var vmaxsize = 1.4
       var vhsize   = 2
-
+      
     </script>
     
   </head>
@@ -84,20 +84,42 @@
 
       </section><!--about-->
     {{/collection.sko-body-sections}}
+
     <section class="speakers" id="speakers">
-      
       <div class="container">
         <h1>{{speakers-title}}</h1>
-          <div class="speakers-container">
+    
 
-            <div class="speakers-list" data-remodal-target="modal">
-              <div class="speaker-img" style="background-image:url('http://stanlemmens.nl/wp/wp-content/uploads/2014/07/bill-gates-wealthiest-person.jpg');"></div>
-              <a href="">Bill Gates</a>
+
+        {{#speakers}}
+
+            <div class="speakers-container">
+              <div class="speakers-list" data-remodal-target="{{name}}">
+                <div class="speaker-img" style="background-image:url('{{{avatar}}}');"></div>
+                <a href="">{{name}}</a>
+              </div>
             </div>
 
-          </div>
-      </div>
+            <!-- MODAL -->
+            <div class="remodal" data-remodal-id="{{name}}">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              <h1>{{name}}</h1>
+              <div class="modal-left">
+                <div class="modal-img" style="background-image:url('{{{avatar}}}');"></div>
+                <div class="modal-title">
+                  <h4>{{{position}}}</h4>
+                  <h3>{{{company}}}</h3>
+                </div>
+              </div>
+              <div class="modal-content">
+                {{{speaker-bio}}}
+              </div>
+            </div>
+    
+        {{/speakers}}
 
+
+      </div>
     </section><!--speakers-->
 
     <section class="agenda" id="agenda">
@@ -149,24 +171,6 @@
           {{/collection.logo-tiers}}
       </div>
     </section><!--sponsors-->
-    
-    <!-- MODAL -->
-    <div class="remodal" data-remodal-id="modal">
-      <button data-remodal-action="close" class="remodal-close"></button>
-      <h1>Bill Gates</h1>
-      <div class="modal-left">
-        <div class="modal-img" style="background-image:url('http://stanlemmens.nl/wp/wp-content/uploads/2014/07/bill-gates-wealthiest-person.jpg');"></div>
-        <div class="modal-title">
-          <h4>Master of Awesome</h4>
-          <h3>Microsoft</h3>
-        </div>
-      </div>
-      <div class="modal-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices elit vel dapibus eleifend. Sed in vulputate sapien. Nunc vel gravida nunc. Vivamus tristique lobortis dui in aliquam. Quisque blandit felis lacinia, congue erat vel, accumsan turpis. Donec eu consequat magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo lacus eu sapien vehicula molestie. Maecenas purus dolor, aliquam vel nulla vitae, interdum finibus lorem. Curabitur enim turpis, varius a magna sed, tristique rhoncus nisi.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non orci vel dolor posuere lacinia quis in est. Suspendisse lobortis lacinia felis, ac blandit sem mollis ultricies. Etiam nec ex a quam aliquet euismod et sed lectus. Duis sit amet vulputate leo. Pellentesque laoreet urna id purus ultricies, a tincidunt libero finibus. Aenean in sem hendrerit, vestibulum lorem et, feugiat elit. Nam rhoncus maximus nibh. Nam eleifend imperdiet felis, et blandit magna. Curabitur nec magna sit amet sem consectetur molestie convallis vel ipsum. Nunc dignissim ligula non enim dignissim elementum. Quisque nulla nisi, venenatis ut bibendum in, pulvinar sed ex. Aliquam a nisl hendrerit, fringilla orci eu, pharetra magna. Morbi in mi et velit faucibus volutpat at sit amet purus. Proin vestibulum metus erat, a vehicula lectus euismod at.M</p>
-        <p>Aenean hendrerit est fringilla arcu dapibus bibendum. In hac habitasse platea dictumst. Ut ornare cursus metus non varius. Proin purus dui, aliquam eu venenatis a, auctor sed leo. Curabitur ultricies hendrerit neque. Pellentesque sollicitudin, lorem nec ultrices auctor, mi lorem blandit justo, sed laoreet lacus libero nec magna. Morbi vitae malesuada nunc, a volutpat metus. Aliquam eu posuere purus, sit amet pellentesque purus.</p>
-      </div>
-    </div>
 
     <footer>
       <div class="copy">2015 &copy; Red Hat, Inc. All Rights reserved.</div>
