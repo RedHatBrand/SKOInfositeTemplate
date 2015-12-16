@@ -75,7 +75,8 @@
 
     </div>
   </section><!--header-->
-
+  {{#collection.sko-body-sections}}
+  {{#block.text-only}}
   <section class="about" id="about">
     
     <div class="container">
@@ -84,7 +85,9 @@
     </div>
 
   </section><!--about-->
-
+  {{/block.text-only}}
+  
+  {{#block.text-and-background-image}}
   <section class="text-image" id="text-image" style="background-image:url({{{text-image}}}); background-size:cover; background-color: #333; -webkit-filter: brightness(1); filter: brightness(3); background-blend-mode: multiply; -webkit-filter: grayscale(1);">
     
     <div class="container">
@@ -94,7 +97,9 @@
     </div>
 
   </section><!--text-image-->
-
+  {{/block.text-and-background-image}}
+  
+  {{#block.video-container}}
   <section class="video" id="video">
     
     <div class="container">
@@ -104,8 +109,10 @@
       </div>
     </div>
 
-  </section><!--text-image-->
-
+  </section><!--video-->
+  {{/block.video-container}}
+  
+  {{#block.speakers}}
   <section class="speakers" id="speakers">
     
     <div class="container">
@@ -121,7 +128,9 @@
     </div>
 
   </section><!--speakers-->
-
+  {{/block.speakers}}
+  
+  {{#block.agenda}}
   <section class="agenda" id="agenda">
     
     <div class="container">
@@ -147,7 +156,9 @@
     </div>
 
   </section><!--agenda-->
+  {{/block.agenda}}
 
+  {{#block.sponsors}}
   <section class="sponsors" id="sponsors">
     
     <div class="container">
@@ -167,8 +178,10 @@
           <img class="red-hat-logo-sponsors" src="{{{bronze-logo-sponsor}}}" />
         </div>
     </div>
-
   </section><!--sponsors-->
+  {{/block.sponsors}}
+
+  {{/collection.sko-body-sections}}
   
   <!-- MODAL -->
   <div class="remodal" data-remodal-id="modal">
