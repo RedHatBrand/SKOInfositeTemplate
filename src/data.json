@@ -7,8 +7,10 @@
   "font-size": "1em",
   "call-to-action": "Click to Deny.",
   "call-to-action-url": "#",
-  "region": "Europe, Middle East & Africa",
+  "sko-region": "Europe, Middle East & Africa",
   "sko-date": "3 March - 4 March",
   "text-image": "https://images.unsplash.com/photo-1447678523326-1360892abab8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=f2c48f62e3ccbc0948518b2188118f95",
-  "inline-image": "https://images.unsplash.com/photo-1447678523326-1360892abab8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=f2c48f62e3ccbc0948518b2188118f95"
+  "headline": "ENERGIZE YOUR ENTERPRISE",
+  "subheading": "Blaze the trail to business transformation",
+  "call-to-action": "Register Now"
 }

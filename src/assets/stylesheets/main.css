@@ -60,7 +60,7 @@ section {
   position:relative;
 }
 
-section:nth-child(2) {
+section:nth-child(3) {
   background-color: #e0e5e7 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -68,16 +68,17 @@ section:nth-child(2) {
 
 section:nth-child(even):after {
   background-image:url(http://redhatbrand.github.io/RedHatPatterns/positioned-patterns/corporate/grey-light/positioned-08-04-100.svg);
-  background-repeat: norepeat;
-  background-size: cover;
-  background-position: 50% 50%;
-  width:100%;
-  height:100%;
+  background-size: contain;
+  background-position: 100% 100%;
+  width: 100%;
+  height: 100%;
   content: " ";
-  position:absolute;
-  top:0;
+  position: absolute;
+  top: 0;
   z-index: -100;
   opacity: 0.3;
+  bottom: 0;
+  background-repeat: no-repeat;
 }
 
 section:nth-child(odd) {
@@ -91,27 +92,74 @@ section:nth-child(odd) {
 }
 
 .center-content {
-  width: 24em;
+  width: 50%;
   margin: 0 auto;
   display: block;
   position: absolute;
   z-index: 2;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -56%);
 }
 
-.date {
+@media (max-width: 600px) {
+  .center-content {
+    width: 90% !important;
+  }
+}
+
+.sko-logo {
+  max-width: 30em;
+}
+
+.headline {
   margin-top: 1.5em;
   border-top: 2px solid #333;
 }
 
-.date h3{
+.headline h1{
+  color: #333;
+  font-size: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  font-weight: 700;
+}
+
+.subheading h3, .date h3 {
   color: #333;
   font-size: 1.5em;
   margin-top: 0.5em;
   margin-bottom: 0em;
+  font-weight: 300;
+}
+
+.subheading {
+  width: 70%;
+}
+
+.subheading h3 {
+  color: #555;
+}
+
+.date h3 {
+  font-style: italic;
+  font-size: 1em !important;
+}
+
+.cta {
+  background-color: #9A9A9A;
+  padding: 1em;
+  margin: 1em;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
   text-align: right;
+  color: white;
+  float: right;
+  margin-top: -2.3em;
 }
 
 .nav {
@@ -140,6 +188,7 @@ section:nth-child(odd) {
   font-size: 1em;
   text-align: center;
   padding: 1em 1em 2em 1em;
+  cursor: pointer;
 }
 
 .nav li a {
@@ -186,6 +235,16 @@ text {
   right: 0;
   width: 8em;
   margin: 2em;
+  z-index: 999;
+}
+
+.fixed {
+  position: fixed;
+  margin: 0.7em 1em;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  width: 5.5em;
 }
 
 .speakers-container {
@@ -196,12 +255,8 @@ text {
   display: inline-block;
   margin: .5em;
   position:relative;
-  background-color: red;
   border-radius: 0.3em;
-}
-
-.speakers-list:hover a {
-  color: red;
+  cursor: pointer;
 }
 
 .speakers-list:hover .speaker-img {
@@ -235,6 +290,19 @@ text {
 
 .sponsors-container {
   text-align: center;
+  margin-bottom: 3em;
+}
+
+.sponsors-container:last-child {
+  margin-bottom: 0em;
+}
+
+.sponsors h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em;
 }
 
 .red-hat-logo-sponsors {
@@ -320,21 +388,23 @@ footer {
     background-color: #F9A530;
 }
 .menui {
-    background: #fff;
+    background: #333;
     transition: 0.6s ease;
     transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
     margin-top: 10px;
     position: absolute;
+    margin-left: 4px;
 }
 
 
 .icon {
-    z-index: 999;
+    background-color: rgba(224,229,231, 0.9) !important;
+    z-index: 998;
     position: fixed;
     display: none;
     padding: 9px;
     height: 32px;
-    width:32px;
+    width: 100%;
     margin: 0px;
     top: 0;
     left: 0;
@@ -344,25 +414,28 @@ footer {
     font-family: inherit;
     top: 0;
     left:0;
-    z-index: 998;
+    z-index: 997;
     display: none;
     position: fixed;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    height: 100% !important;
+    background: rgba(224,229,231, 0.9) !important;
+    background: #E0E5E7;
     transform: translateY(0%) !important;
 }
 .mobilenav li {
     list-style-type: none;
-    text-align: center;
+    text-align: left;
+    margin-left: 1em;
     padding: 10px;
     display: block;
 }
 .mobilenav li a {
     font-size: 150%;
-    color: #fff;
+    color: #333;
     text-decoration: none;
     font-weight: 300;
+
     width: 100%;
 }
 .mobilenav li:first-child {
@@ -370,34 +443,36 @@ footer {
 }
 
 .mobilenav li a:hover {
-  padding-bottom: 0.5em;
+  padding-bottom: 0.2em;
 }
 
 /* AGENDA */
 
 .agenda .row {
-  margin: 1em 0;
-  padding: 1em;
+  padding: 1.5em 1em;
+  border-top: 1px solid #E4E4E4;
 }
 
 .agenda-day:not(:last-child) {
   margin-bottom: 4em;
 }
 
+.row.break + .row {
+  border-top: none;
+}
+
 .agenda .break {
   opacity: 0.8;
   background-color: rgba(245,245,245, 1);
+  color: #949494;
+  border-top: none;
 }
 
 .agenda .day-header {
   padding-bottom: 0.5em;
   border-bottom: 1px solid #333;
+  margin-bottom: 1em;
 }
-
-.agenda .row:nth-child(even) {
-  background-color: rgba(245,245,245, 0.8);
-}
-
 .row .time {
   display: inline-block;
   width: 20%;
@@ -416,7 +491,375 @@ footer {
   font-weight: 700;
 }
 
+/* MODAL */
 
+.remodal-overlay {
+  background: rgba(224,229,231, 0.7) !important;
+  background: #E0E5E7;
+}
+
+.remodal h1 {
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+}
+
+.modal-left {
+  float: left;
+}
+
+.modal-title {
+  text-align: left;
+  padding-right: 1em;
+}
+
+.modal-title h4 {
+  margin: 1em 0 0.5em 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5em;
+  color: #A5A5A5;
+}
+
+.modal-title h3 {
+  margin-top: 0;
+}
+
+.modal-img {
+  width: 10em;
+  height: 13em;
+  display: block;
+  background-size: cover;
+  background-position: 50%;
+  margin-top: 1em;
+  margin-right: 1em;
+  border-radius: 0.2em;
+}
+
+.modal-content {
+  text-align: left;
+  overflow: scroll;
+  height: 25em;
+}
+
+/* ==========================================================================
+   Remodal's necessary styles
+   ========================================================================== */
+
+/* Hide scroll bar */
+
+html.remodal-is-locked {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Anti FOUC */
+
+.remodal,
+[data-remodal-id] {
+  display: none;
+}
+
+/* Necessary styles of the overlay */
+
+.remodal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: -5000px;
+  right: -5000px;
+  bottom: -5000px;
+  left: -5000px;
+
+  display: none;
+}
+
+/* Necessary styles of the wrapper */
+
+.remodal-wrapper {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: none;
+  overflow: auto;
+
+  text-align: center;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.remodal-wrapper:after {
+  display: inline-block;
+
+  height: 100%;
+  margin-left: -0.05em;
+
+  content: "";
+}
+
+/* Fix iPad, iPhone glitches */
+
+.remodal-overlay,
+.remodal-wrapper {
+  backface-visibility: hidden;
+}
+
+/* Necessary styles of the modal dialog */
+
+.remodal {
+  position: relative;
+
+  outline: none;
+
+  text-size-adjust: 100%;
+}
+
+.remodal-is-initialized {
+  /* Disable Anti-FOUC */
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Remodal's default mobile first theme
+   ========================================================================== */
+
+/* Default theme styles for the background */
+
+.remodal-bg.remodal-is-opening,
+.remodal-bg.remodal-is-opened {
+  filter: blur(3px);
+}
+
+/* Default theme styles of the overlay */
+
+.remodal-overlay {
+  background: rgba(43, 46, 56, 0.9);
+}
+
+.remodal-overlay.remodal-is-opening,
+.remodal-overlay.remodal-is-closing {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.remodal-overlay.remodal-is-opening {
+  animation-name: remodal-overlay-opening-keyframes;
+}
+
+.remodal-overlay.remodal-is-closing {
+  animation-name: remodal-overlay-closing-keyframes;
+}
+
+/* Default theme styles of the wrapper */
+
+.remodal-wrapper {
+  padding: 10px 10px 0;
+}
+
+/* Default theme styles of the modal dialog */
+
+.remodal {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 35px;
+
+  transform: translate3d(0, 0, 0);
+
+  color: #2b2e38;
+  background: #fff;
+}
+
+.remodal.remodal-is-opening,
+.remodal.remodal-is-closing {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.remodal.remodal-is-opening {
+  animation-name: remodal-opening-keyframes;
+}
+
+.remodal.remodal-is-closing {
+  animation-name: remodal-closing-keyframes;
+}
+
+/* Vertical align of the modal dialog */
+
+.remodal,
+.remodal-wrapper:after {
+  vertical-align: middle;
+}
+
+/* Close button */
+
+.remodal-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  overflow: visible;
+
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+
+  color: #95979c;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.remodal-close:hover,
+.remodal-close:focus {
+  color: #2b2e38;
+}
+
+.remodal-close:before {
+  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
+  font-size: 25px;
+  line-height: 35px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  width: 35px;
+
+  content: "\00d7";
+  text-align: center;
+}
+
+/* Dialog buttons */
+
+.remodal-confirm,
+.remodal-cancel {
+  font: inherit;
+
+  display: inline-block;
+  overflow: visible;
+
+  min-width: 110px;
+  margin: 0;
+  padding: 12px 0;
+
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+
+  border: 0;
+  outline: 0;
+}
+
+.remodal-confirm {
+  color: #fff;
+  background: #81c784;
+}
+
+.remodal-confirm:hover,
+.remodal-confirm:focus {
+  background: #66bb6a;
+}
+
+.remodal-cancel {
+  color: #fff;
+  background: #e57373;
+}
+
+.remodal-cancel:hover,
+.remodal-cancel:focus {
+  background: #ef5350;
+}
+
+/* Remove inner padding and border in Firefox 4+ for the button tag. */
+
+.remodal-confirm::-moz-focus-inner,
+.remodal-cancel::-moz-focus-inner,
+.remodal-close::-moz-focus-inner {
+  padding: 0;
+
+  border: 0;
+}
+
+/* Keyframes
+   ========================================================================== */
+
+@keyframes remodal-opening-keyframes {
+  from {
+    transform: scale(1.05);
+
+    opacity: 0;
+  }
+  to {
+    transform: none;
+
+    opacity: 1;
+  }
+}
+
+@keyframes remodal-closing-keyframes {
+  from {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.95);
+
+    opacity: 0;
+  }
+}
+
+@keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Media queries
+   ========================================================================== */
+
+@media only screen and (min-width: 641px) {
+  .remodal {
+    max-width: 700px;
+  }
+}
+
+/* IE8
+   ========================================================================== */
+
+.lt-ie9 .remodal-overlay {
+  background: #2b2e38;
+}
+
+.lt-ie9 .remodal {
+  width: 700px;
+}
 
 
 
