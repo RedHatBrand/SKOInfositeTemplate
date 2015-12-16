@@ -79,7 +79,7 @@
       <section class="about" id="about">
         
         <div class="container">
-          <h1>{{text-only-title}}}</h1>
+          <h1>{{text-only-title}}</h1>
           {{{text-only-body-copy}}}  
         </div>
 
@@ -88,7 +88,7 @@
     <section class="speakers" id="speakers">
       
       <div class="container">
-        <h1>{{speakers-title}}}</h1>
+        <h1>{{speakers-title}}</h1>
           <div class="speakers-container">
 
             <div class="speakers-list" data-remodal-target="modal">
@@ -133,7 +133,7 @@
     <section class="sponsors" id="sponsors">
       
       <div class="container">
-        <h1>{{title}}}</h1>
+        <h1>{{title}}</h1>
           {{#collection.logo-tiers}}
             <h3>{{logo-tier-title}}</h3>
             <div class="sponsors-container">
