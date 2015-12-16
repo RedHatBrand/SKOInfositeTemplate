@@ -80,7 +80,7 @@ for (i = 0; i < links.length; i++) {
 window.addEventListener('resize', checkNavWidth);
 
 function checkNavWidth() {
-		if (totalWidth + 30 > window.innerWidth) {
+		if (totalWidth + 30 > window.innerWidth - 100) {
 			$(".nav").addClass("mobilenav");
 			$(".icon").addClass("show");
 			$(".red-hat-logo").addClass("fixed");
