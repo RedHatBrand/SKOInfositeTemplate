@@ -15,7 +15,7 @@
     </script>
     
   </head>
-  <body class="{{theme}}">
+  <body>
   <div class="remodal-bg">
     
     <a href="javascript:void(0)" class="icon">
@@ -30,9 +30,9 @@
       <div class="container">
         <ul>
           <li class="logo js-nav-links"><a href="http://redhat.com"> <img class="red-hat-logo" src="https://s3.amazonaws.com/media-p.slid.es/uploads/team-32/images/1552030/redhat-logo.svg" /></a></li>
-          <li class="js-nav-links"><a href="#speakers">Speakers</a></li>
-          <li class="js-nav-links"><a href="#agenda">Agenda</a></li>
-          <li class="js-nav-links"><a href="#sponsors">Sponsors</a></li>
+          {{#collection.speakers.length}}<li class="js-nav-links"><a href="#speakers">Speakers</a></li>  {{/collection.speakers.length}}
+          {{#collection.agenda-day.length}}<li class="js-nav-links"><a href="#agenda">Agenda</a></li>{{/collection.agenda-day.length}}
+          {{#sponsor-section-title}}<li class="js-nav-links"><a href="#sponsors">Sponsors</a></li>{{/sponsor-section-title}}
         </ul>
       </div>
     </nav>
@@ -85,13 +85,15 @@
       </section><!--about-->
     {{/collection.sko-body-sections}}
 
+    {{#collection.speakers.length}}
+
     <section class="speakers" id="speakers">
       <div class="container">
         <h1>{{speakers-title}}</h1>
     
 
 
-        {{#speakers}}
+        {{#collection.speakers}}
 
             <div class="speakers-container">
               <div class="speakers-list" data-remodal-target="{{name}}">
@@ -116,11 +118,15 @@
               </div>
             </div>
     
-        {{/speakers}}
+        {{/collection.speakers}}
 
 
       </div>
     </section><!--speakers-->
+
+    {{/collection.speakers.length}}
+
+    {{#collection.agenda-day.length}}
 
     <section class="agenda" id="agenda">
       
@@ -151,44 +157,53 @@
 
     </section><!--agenda-->
 
+    {{/collection.agenda-day.length}}
+
     <section class="sponsors" id="sponsors">
       <div class="container">
-          <h1>{{title}}</h1>
-          {{ #collection.platinum.sponsor-logo.length }}
+         {{#sponsor-section-title}} <h1>{{sponsor-section-title}}</h1>{{/sponsor-section-title}}
+        
+          {{ #collection.platinum-sponsor-logo.length }}
             <h3>Platinum</h3>
             <div class="sponsors-container">
-              {{ #collection.platinum.sponsor-logo }}
+              {{ #collection.platinum-sponsor-logo }}
                   <img class="red-hat-logo-sponsors" src="{{{platinum-logo-image}}}" />
-              {{ /collection.platinum.sponsor-logo }}
+              {{ /collection.platinum-sponsor-logo }}
             </div>
-          {{ /collection.platinum.sponsor-logo.length }}
+          {{ /collection.platinum-sponsor-logo.length }}
         
-          {{ #collection.gold.sponsor-logo.length }}
+        
+        
+          {{ #collection.gold-sponsor-logo.length }}
             <h3>Gold</h3>
             <div class="sponsors-container">
-              {{ #collection.gold.sponsor-logo }}
+              {{ #collection.gold-sponsor-logo }}
                   <img class="red-hat-logo-sponsors" src="{{{gold-logo-image}}}" />
-              {{ /collection.gold.sponsor-logo }}
+              {{ /collection.gold-sponsor-logo }}
             </div>
-          {{ /collection.gold.sponsor-logo.length }}
+          {{ /collection.gold-sponsor-logo.length }}
+       
         
-          {{ #collection.silver.sponsor-logo.length }}
+        
+          {{ #collection.silver-sponsor-logo.length }}
             <h3>Silver</h3>
             <div class="sponsors-container">
-              {{ #collection.silver.sponsor-logo }}
+              {{ #collection.silver-sponsor-logo }}
                   <img class="red-hat-logo-sponsors" src="{{{silver-logo-image}}}" />
-              {{ /collection.silver.sponsor-logo }}
+              {{ /collection.silver-sponsor-logo }}
             </div>
-          {{ /collection.silver.sponsor-logo.length }}
+          {{ /collection.silver-sponsor-logo.length }}
         
-          {{ #collection.bronze.sponsor-logo.length }}
+        
+        
+          {{ #collection.bronze-sponsor-logo.length }}
             <h3>Bronze</h3>
             <div class="sponsors-container">
-              {{ #collection.bronze.sponsor-logo }}
+              {{ #collection.bronze-sponsor-logo }}
                   <img class="red-hat-logo-sponsors" src="{{{bronze-logo-image}}}" />
-        {{ /collection.bronze.sponsor-logo }}
+              {{ /collection.bronze-sponsor-logo }}
             </div>
-          {{ /collection.bronze.sponsor-logo.length }}
+          {{ /collection.bronze-sponsor-logo.length }}
       </div>
     </section><!--sponsors-->
 
