@@ -312,29 +312,6 @@ text {
   background-position-x: 50%;
 }
 
-.sponsors-container {
-  text-align: center;
-  margin-bottom: 3em;
-}
-
-.sponsors-container:last-child {
-  margin-bottom: 0em;
-}
-
-.sponsors h3 {
-  text-transform: uppercase;
-  font-weight: 300;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.5em;
-  margin-bottom: 1.5em;
-}
-
-.red-hat-logo-sponsors {
-  display: inline-block;
-  width: 8em;
-  margin: 0 3em;
-}
-
 footer {
   background-color: #111;
   padding: 3em;

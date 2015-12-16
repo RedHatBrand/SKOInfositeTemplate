@@ -75,14 +75,41 @@
       </div>
     </section><!--header-->
     {{#collection.sko-body-sections}}
-      <section class="about" id="about">
-        
-        <div class="container">
-          <h1>{{text-only-title}}</h1>
-          {{{text-only-body-copy}}}  
-        </div>
+      {{#block.text-only}}
+        <section class="about" id="about">
 
-      </section><!--about-->
+          <div class="container">
+            <h1>{{title}}</h1>
+            {{{body-copy}}}  
+          </div>
+
+        </section><!--about-->
+      {{/block.text-only}}
+
+      {{#block.text-with-background-image}}
+        <section class="text-image" id="text-image" style="background-image:url({{{background-image}}}); background-size:cover; background-color: #333; -webkit-filter: brightness(1); filter: brightness(3); background-blend-mode: multiply; -webkit-filter: grayscale(1);">
+      
+          <div class="container">
+            <h1>{{title}}}</h1>
+            {{{body-copy}}}  
+          </div>
+
+        </section><!--text-image-->
+      {{/block.text-with-background-image}}
+
+      {{#block.video}}
+        <section class="video" id="video">
+      
+          <div class="container">
+            <h1>{{title}}</h1>
+            <div class="video-container">
+              <iframe width="420" height="315" src="{{{video}}}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+        </section><!--video-->
+      {{/block.video}}
+
     {{/collection.sko-body-sections}}
 
     {{#collection.speakers.length}}
@@ -90,8 +117,6 @@
     <section class="speakers" id="speakers">
       <div class="container">
         <h1>{{speakers-title}}</h1>
-    
-
 
         {{#collection.speakers}}
 
@@ -158,54 +183,6 @@
     </section><!--agenda-->
 
     {{/collection.agenda-day.length}}
-
-    <section class="sponsors" id="sponsors">
-      <div class="container">
-         {{#sponsor-section-title}} <h1>{{sponsor-section-title}}</h1>{{/sponsor-section-title}}
-        
-          {{ #collection.platinum-sponsor-logo.length }}
-            <h3>Platinum</h3>
-            <div class="sponsors-container">
-              {{ #collection.platinum-sponsor-logo }}
-                  <img class="red-hat-logo-sponsors" src="{{{platinum-logo-image}}}" />
-              {{ /collection.platinum-sponsor-logo }}
-            </div>
-          {{ /collection.platinum-sponsor-logo.length }}
-        
-        
-        
-          {{ #collection.gold-sponsor-logo.length }}
-            <h3>Gold</h3>
-            <div class="sponsors-container">
-              {{ #collection.gold-sponsor-logo }}
-                  <img class="red-hat-logo-sponsors" src="{{{gold-logo-image}}}" />
-              {{ /collection.gold-sponsor-logo }}
-            </div>
-          {{ /collection.gold-sponsor-logo.length }}
-       
-        
-        
-          {{ #collection.silver-sponsor-logo.length }}
-            <h3>Silver</h3>
-            <div class="sponsors-container">
-              {{ #collection.silver-sponsor-logo }}
-                  <img class="red-hat-logo-sponsors" src="{{{silver-logo-image}}}" />
-              {{ /collection.silver-sponsor-logo }}
-            </div>
-          {{ /collection.silver-sponsor-logo.length }}
-        
-        
-        
-          {{ #collection.bronze-sponsor-logo.length }}
-            <h3>Bronze</h3>
-            <div class="sponsors-container">
-              {{ #collection.bronze-sponsor-logo }}
-                  <img class="red-hat-logo-sponsors" src="{{{bronze-logo-image}}}" />
-              {{ /collection.bronze-sponsor-logo }}
-            </div>
-          {{ /collection.bronze-sponsor-logo.length }}
-      </div>
-    </section><!--sponsors-->
 
     <footer>
       <div class="copy">2015 &copy; Red Hat, Inc. All Rights reserved.</div>
