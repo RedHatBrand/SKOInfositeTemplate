@@ -99,7 +99,7 @@
   </section><!--text-image-->
   {{/block.text-and-background-image}}
   
-  {{#block.video-container}}
+  {{#block.video-section}}
   <section class="video" id="video">
     
     <div class="container">
@@ -110,7 +110,7 @@
     </div>
 
   </section><!--video-->
-  {{/block.video-container}}
+  {{/block.video-section}}
   
   {{#block.speakers}}
   <section class="speakers" id="speakers">
@@ -134,25 +134,28 @@
   <section class="agenda" id="agenda">
     
     <div class="container">
-      <h1>AGENDA</h1>
+      <h1>{{agenda-title}}</h1>
+
+
+      {{#collection.agenda-day}}
         <div class="agenda-day">
           <div class="day-header">
-            <h2>Monday | 3 March</h2>
+            <h2>{{agenda-day-title}}</h2>
           </div>
-          <div class="row break">
-            <div class="time">8:00 - 9:00</div>
+
+          {{#spreadsheet.agenda-sessions}}
+          <div class="row {{session-type}}">
+            <div class="time">{{start-time}} - {{end-time}}</div>
             <div class="agenda-details">
-              <div class="talk-topic">Registration</div>
+              <div class="talk-topic">{{session-title}}</div>
+              <div class="speaker">{{speaker-name}}</div>
             </div>
           </div>
-          <div class="row">
-            <div class="time">9:00 - 10:00</div>
-            <div class="agenda-details">
-              <div class="talk-topic">The Wonders of the World</div>
-              <div class="speaker">James Lee | The Chillest Chiller Alive</div>
-            </div>
-          </div>
+          {{/spreadsheet.agenda-sessions}}
+
         </div>
+      {{/collection.agenda-day}}
+
     </div>
 
   </section><!--agenda-->
